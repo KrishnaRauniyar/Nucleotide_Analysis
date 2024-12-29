@@ -18,6 +18,6 @@ Navigate through the sections below to explore the specific analyses in detail:
 
 ## How to Use This Repository
 
-1. Clone this repository to your local machine:
+1. Clone this repository:
    ```bash
    git clone https://github.com/KrishnaRauniyar/Nucleotide_Analysis.git
