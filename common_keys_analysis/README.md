@@ -15,7 +15,7 @@ To get started with the `Common Key Calculation`, clone the repository from GitH
 
 ```bash
 git clone https://github.com/KrishnaRauniyar/Nucleotide_Analysis.git
-cd common_keys_analysis
+cd Nucleotide_Analysis/common_keys_analysis
 ```
 
 ### Installing the Package

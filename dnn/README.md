@@ -15,7 +15,7 @@ To get started with the `Deep Neural Network`, clone the repository from GitHub:
 
 ```bash
 git clone https://github.com/KrishnaRauniyar/Nucleotide_Analysis.git
-cd dnn
+cd Nucleotide_Analysis/dnn
 ```
 
 ### Installing the Package
