@@ -35,14 +35,22 @@ pip install -r requirements.txt
 
 ## Usage
 ### Deep Neural Network
-For dnn analysis run the following command:
+The analysis involves two main steps:
 
-```python
-python drug_model.py -p input_csv_file
+1. Generate Key Frequency File
+First, you need to generate a frequency file that will create the input CSV for the DNN model, the key frequency files can be created from the triplets file which we create from the Nuclotide section (https://github.com/KrishnaRauniyar/TSR_NUCLEOTIDE_PACKAGE.git). We just need to specify the acutual directory path of the triplets keys. Use the following command to generate the input file:
+
+```bash
+python key_frequency_drug.py -p triplets_directory -H yes
 ```
-The input_csv_file is a csv file that contains all the features as the keys and their respective frequency or occurrence in certain protein file. 
 
-### CSV file information as output (input_csv_file.csv)
+Parameters:
+- -p: Path to the directory containing protein files
+- -H: Set to 'yes' to include headers in the output CSV
+
+This will generate an input CSV file with the frequency of triplet keys for each protein.
+
+### CSV file information as input (input_csv_file.csv)
 input_csv_file.csv will have the following format.
 
 | Protein       | key1       | key2        | key3                   | 
@@ -51,4 +59,17 @@ input_csv_file.csv will have the following format.
 | 5VM9_D_3_A    | 1          | 5           | 9                      |
 
 Here key1, key2 and key3 are the triplets keys in the respective protein. Based on this input file we can perform dnn analysis and make prdiction. The code is able to generate accuracy plot, loss plot and confusion matrix which are important for model accuracy and prediction analysis.
+
+2. Run DNN Analysis after generating the input CSV, run the DNN model:
+
+```bash
+python drug_model.py -p input_csv_file
+```
+The input_csv_file is a csv file that contains all the features as the keys and their respective frequency or occurrence in certain protein file. 
+
+## Result
+Three files will be generated:
+- accuracy_plot.png (This is the accuracy plot of the dnn model)
+- loss_plot.csv (This is the loss plot of the dnn model)
+- confusion_matrix.csv (This is the confusion matrix of the dnn model)
 
